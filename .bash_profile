@@ -7,11 +7,20 @@ echo "Hello $USER"
 export COURSE_ID=DevOpsTheHardWay
 echo $COURSE_ID
 
-# this script checks file .token permissions
-filePermission=$(stat -c%a .token)
+# Define the path to the .token file
+token_file="$HOME/.token"
 
-if [[ $filePermission -ne 600 ]] ; then
+# Check if the .token file exists
+if [ -f "$token_file" ]; then
+    # Get the octal representation of the file permissions
+    permissions=$(stat -c "%a" "$token_file")
+
+    # Check if permissions are different from 600
+    if [ "$permissions" != "600" ]; then
         echo "Warning: .token file has too open permissions"
+    fi
+else
+    echo "Warning: .token file does not exist"
 fi
 
 # Change umask default setting of user
