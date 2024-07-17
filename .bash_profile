@@ -8,7 +8,6 @@ export COURSE_ID=DevOpsTheHardWay
 echo $COURSE_ID
 
 # this script checks file .token permissions
-touch .token
 filePermission=$(stat -c%a .token)
 
 if [[ $filePermission -ne 600 ]] ; then
