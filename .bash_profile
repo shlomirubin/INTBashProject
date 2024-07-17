@@ -19,8 +19,6 @@ if [ -f "$token_file" ]; then
     if [ "$permissions" != "600" ]; then
         echo "Warning: .token file has too open permissions"
     fi
-else
-    echo "Warning: .token file does not exist"
 fi
 
 # Change umask default setting of user
@@ -46,7 +44,7 @@ mkdir tmp
 cd tmp
 touch test1 test2 test3
 cd
-rm ./$USER/tmp/*
+rm home/$USER/tmp/*
 
 # the following kill a process that bound to port 8080
 fuser -k 8080/tcp
