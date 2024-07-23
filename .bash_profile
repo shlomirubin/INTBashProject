@@ -46,4 +46,3 @@ rm home/$USER/tmp/*
 
 # the following kill a process that bound to port 8080
 fuser -k 8080/tcp
-
