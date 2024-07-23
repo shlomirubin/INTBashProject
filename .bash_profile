@@ -22,7 +22,7 @@ if [ -f "$token_file" ]; then
 fi
 
 # Change umask default setting of user
-echo "umask 022" >> .bashrc
+echo "umask 006" >> .bashrc
 source .bashrc
 
 
