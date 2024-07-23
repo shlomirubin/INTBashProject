@@ -4,8 +4,8 @@
 echo "Hello $USER"
 
 # create environment variable
-export COURSE_ID=_REPO_NAME_
-echo $COURSE_ID
+export COURSE_ID=__REPO_NAME__
+
 
 # Define the path to the .token file
 token_file="$HOME/.token"
@@ -24,21 +24,24 @@ fi
 # Change umask default setting of user
 echo "umask 022" >> .bashrc
 source .bashrc
-umask
+
 
 # create directory named usercommands and add it's to PATH
 export PATH=$PATH:/home/$USER/usercommands
-echo $PATH
+
 
 # prints date in ISO 8601 format, UTC timezone.
 date -u +"%Y-%m-%dT%H:%M:%SZ"
 
 # create an alias that prints all file with extension .txt
+shopt -s expand_aliases
+# now make and use aliases
 alias ltxt="ls -la *.txt"
 touch file.txt
 ltxt
 
 # create a directory named tmp, creates 3 files in it, then removes all files inside without remove directory itself
+mkdir tmp
 cd tmp
 touch test1 test2 test3
 cd
