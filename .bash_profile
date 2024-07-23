@@ -25,7 +25,6 @@ fi
 echo "umask 006" >> .bashrc
 source .bashrc
 
-
 # create directory named usercommands and add it's to PATH
 export PATH=$PATH:/home/$USER/usercommands
 
