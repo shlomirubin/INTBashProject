@@ -6,8 +6,7 @@ echo "Hello $USER"
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
-# Define the path to the .token file
-# token_file="$HOME/.token"
+touch .token
 
 # Check if the .token file exists
 if [ -f ".token" ]; then
