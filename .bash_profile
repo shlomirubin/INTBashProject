@@ -4,7 +4,7 @@
 echo "Hello $USER"
 
 # create environment variable
-export COURSE_ID=DevOpsTheHardWay
+export COURSE_ID=_REPO_NAME_
 echo $COURSE_ID
 
 # Define the path to the .token file
