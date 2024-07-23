@@ -21,8 +21,7 @@ if [ -f "$token_file" ]; then
 fi
 
 # Change umask default setting of user
-echo "umask 006" >> .bashrc
-source .bashrc
+umask 006
 umask
 
 # create directory named usercommands and add it's to PATH
