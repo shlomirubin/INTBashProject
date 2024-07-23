@@ -6,8 +6,6 @@ echo "Hello $USER"
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
-touch .token
-
 # Define the path to the .token file
 # token_file="$HOME/.token"
 
