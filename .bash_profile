@@ -27,7 +27,6 @@ source .bashrc
 umask
 
 # create directory named usercommands and add it's to PATH
-mkdir usercommands
 export PATH=$PATH:/home/$USER/usercommands
 echo $PATH
 
@@ -40,7 +39,6 @@ touch file.txt
 ltxt
 
 # create a directory named tmp, creates 3 files in it, then removes all files inside without remove directory itself
-mkdir tmp
 cd tmp
 touch test1 test2 test3
 cd
