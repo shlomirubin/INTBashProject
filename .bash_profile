@@ -6,13 +6,15 @@ echo "Hello $USER"
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
+touch .token
+
 # Define the path to the .token file
-token_file="$HOME/.token"
+# token_file="$HOME/.token"
 
 # Check if the .token file exists
-if [ -f "$token_file" ]; then
+if [ -f ".token" ]; then
     # Get the octal representation of the file permissions
-    permissions=$(stat -c "%a" "$token_file")
+    permissions=$(stat -c "%a" ".token")
 
     # Check if permissions are different from 600
     if [ "$permissions" != "600" ]; then
