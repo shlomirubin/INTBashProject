@@ -28,7 +28,6 @@ source .bashrc
 # create directory named usercommands and add it's to PATH
 export PATH=$PATH:/home/$USER/usercommands
 
-
 # prints date in ISO 8601 format, UTC timezone.
 date -u +"%Y-%m-%dT%H:%M:%SZ"
 
