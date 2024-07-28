@@ -6,24 +6,24 @@ echo "Hello $USER"
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
-ls -la | grep .token
+#!/bin/bash
 
-# Check if the .token file exists
-if [ -f ".token" ]; then
-    # Get the octal representation of the file permissions
-    permissions=$(stat -c "%a" ".token")
+# Define the file path
+FILE="$HOME/.token"
 
-    # Check if permissions are different from 600
-    if [ "$permissions" != "600" ]; then
-        echo "Warning: .token file has too open permissions"
-    fi
+# Check if the file exists
+if [ -e "$FILE" ]; then
+  # Get the octal permissions of the file
+  PERMS=$(stat -c "%a" "$FILE")
 
-    if [ "$permissions" == "600" ]; then
-        echo ".token file has too good permissions"
-    fi
-
-
+  # Check if the permissions are different from 600
+  if [ "$PERMS" -ne 600 ]; then
+    echo "Warning: .token file has too open permissions"
+  fi
+else
+  echo "The .token file does not exist in the home directory"
 fi
+
 
 # Change umask default setting of user
 umask 006
