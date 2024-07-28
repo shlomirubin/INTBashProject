@@ -6,10 +6,10 @@ echo "Hello $USER"
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
-FILE=".token"
+FILE="/home/$USER/.token"
 
 # Check if the file exists
-if [ -e "$FILE" ]; then
+if [ -f "$FILE" ]; then
   # Get the octal permissions of the file
   PERMS=$(stat -c %a "$FILE")
   # Check if the permissions are different from 600
