@@ -6,8 +6,6 @@ echo "Hello $USER"
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
-touch .token
-
 # Check if the .token file exists
 if [ -f ".token" ]; then
     # Get the octal representation of the file permissions
@@ -16,6 +14,10 @@ if [ -f ".token" ]; then
     # Check if permissions are different from 600
     if [ "$permissions" != "600" ]; then
         echo "Warning: .token file has too open permissions"
+    fi
+
+    if [ "$permissions" == "600" ]; then
+        echo ".token file has too good permissions"
     fi
 fi
 
