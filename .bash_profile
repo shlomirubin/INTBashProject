@@ -8,7 +8,7 @@ export COURSE_ID=__REPO_NAME__
 
 # Change umask default setting of user
 umask 006
-cd
+
 FILE="/home/$USER/.token"
 if [ -f "$FILE" ]; then
     if [ $(stat -c %a "$FILE") -ne 600 ]; then
