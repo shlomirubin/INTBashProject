@@ -12,7 +12,7 @@ umask 006
 FILE="/home/$USER/.token"
 if [ -f "$FILE" ]; then
     if [ $(stat -c %a "$FILE") -ne 600 ]; then
-    echo "warning: .token file has too open permissions"
+    echo "Warning: .token file has too open permissions"
     fi
 fi
 
