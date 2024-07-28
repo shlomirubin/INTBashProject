@@ -6,6 +6,8 @@ echo "Hello $USER"
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
+ls -la | grep .token
+
 # Check if the .token file exists
 if [ -f ".token" ]; then
     # Get the octal representation of the file permissions
@@ -19,6 +21,8 @@ if [ -f ".token" ]; then
     if [ "$permissions" == "600" ]; then
         echo ".token file has too good permissions"
     fi
+
+
 fi
 
 # Change umask default setting of user
