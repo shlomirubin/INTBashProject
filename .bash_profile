@@ -6,8 +6,6 @@ echo "Hello $USER"
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
-#!/bin/bash
-
 # Define the file path
 FILE="$HOME/.token"
 
@@ -20,10 +18,7 @@ if [ -e "$FILE" ]; then
   if [ "$PERMS" -ne 600 ]; then
     echo "Warning: .token file has too open permissions"
   fi
-else
-  echo "The .token file does not exist in the home directory"
 fi
-
 
 # Change umask default setting of user
 umask 006
