@@ -12,7 +12,7 @@ if [ -e ".token" ]; then
   # Get the octal permissions of the file
   PERMS=$(stat -c %a ".token")
   # Check if the permissions are different from 600
-  if [ "$PERMS" -ne 600 ]; then
+  if [ "$PERMS" -ne "600" ]; then
     echo "Warning: .token file has too open permissions"
   fi
 fi
