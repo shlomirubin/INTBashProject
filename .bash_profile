@@ -20,6 +20,8 @@ if [ -e "$FILE" ]; then
   fi
 fi
 
+
+
 # Change umask default setting of user
 umask 006
 
