@@ -7,15 +7,10 @@ echo "Hello $USER"
 export COURSE_ID=__REPO_NAME__
 
 FILE="/home/$USER/.token"
-
-# Check if the file exists
 if [ -f "$FILE" ]; then
-  # Get the octal permissions of the file
-  PERMS=$(stat -c %a "$FILE")
-  # Check if the permissions are different from 600
-  if [ "$PERMS" -ne "600" ]; then
-    echo "Warning: .token file has too open permissions"
-  fi
+    if [ $(stat -c "%a" "$FILE") -ne 600 ]; then
+    echo "warning: .token file has too open permissions"
+    fi
 fi
 
 # Change umask default setting of user
