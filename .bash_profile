@@ -1,16 +1,17 @@
 #! /bin/bash
 
 # this greets the user once login is perform
-echo "Hello $USER"
+echo "Hello $(whoami)"
 
 # create environment variable
 export COURSE_ID=__REPO_NAME__
 
 # Change umask default setting of user
 umask 006
+cd
 FILE="/home/$USER/.token"
 if [ -f "$FILE" ]; then
-    if [ $(stat -c "%a" "$FILE") -ne 600 ]; then
+    if [ $(stat -c %a "$FILE") -ne 600 ]; then
     echo "warning: .token file has too open permissions"
     fi
 fi
@@ -18,7 +19,7 @@ fi
 
 
 # create directory named usercommands and add it's to PATH
-export PATH=$PATH:/home/$USER/usercommands
+export PATH="/home/$USER/usercommands:$PATH"
 
 # prints date in ISO 8601 format, UTC timezone.
 date -u +"%Y-%m-%dT%H:%M:%SZ"
