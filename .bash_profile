@@ -12,16 +12,13 @@ FILE="$HOME/.token"
 # Check if the file exists
 if [ -e "$FILE" ]; then
   # Get the octal permissions of the file
-  PERMS=$(stat -c "%a" "$FILE")
+  PERMS=$(stat -c %a "$FILE")
 
   # Check if the permissions are different from 600
   if [ "$PERMS" -ne 600 ]; then
     echo "Warning: .token file has too open permissions"
   fi
 fi
-
-
-
 
 # Change umask default setting of user
 umask 006
