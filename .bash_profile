@@ -12,9 +12,10 @@ umask 006
 
 FILE="/home/$USER/.token"
 if [ -f "$FILE" ]; then
-    if [ $(stat -c "%a" "$FILE") -ne 600 ]; then
-    echo "Warning: .token file has too open permissions"
-    fi
+        permissionsFile=$(stat -c "%a" "$FILE")
+            if [ "$permissionsFile" -ne "600" ]; then
+            echo "Warning: .token file has too open permissions"
+            fi
 fi
 
 # create directory named usercommands and add it's to PATH
