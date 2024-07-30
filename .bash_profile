@@ -33,10 +33,8 @@ ltxt
 
 # create a directory named tmp, creates 3 files in it, then removes all files inside without remove directory itself
 mkdir -p tmp
-ls -la | grep tmp
-cd tmp
-touch test1 test2 test3
-rm -rf *
+rm -rf tmp/*
+
 
 # the following kill a process that bound to port 8080
 fuser -k 8080/tcp
